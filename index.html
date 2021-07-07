@@ -1,0 +1,52 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>CodePen Demo</title>
+<link href="test.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<div class="container">
+
+    <svg id="daylight-map" width="1100" height="550"></svg>
+    <div class="controls">
+        <p class="curr-time">
+            <a class="js-skip" data-skip="-60" href="#">
+                ‹
+            </a>
+            <span>06:08</span>
+            <a class="js-skip" data-skip="60" href="#">
+                ›
+            </a>
+        </p>
+        <p class="curr-date">
+            <a class="js-skip big-jump" data-skip="-43200" href="#">
+                «
+            </a>
+            <a class="js-skip" data-skip="-1440" href="#">
+                ‹
+            </a>
+            <span>02 Jul</span>
+            <a class="js-skip" data-skip="1440" href="#">
+                ›
+            </a>
+            <a class="js-skip big-jump" data-skip="43200" href="#">
+                »
+            </a>
+        </p>
+    </div>
+</div>
+
+<p class="animate"><a href="#" class="js-animate animating"></a></p>
+
+<script src="d3.min.js"></script>
+<script src="jquery.min.js"></script>
+<script src="topojson.min.js "></script>
+<script src="d3.geo.projection.min.js"></script>
+<script src="moment.min.js"></script>
+<script src="moment-timezone.min.js"></script>
+<script src="suncalc.js"></script>
+  <script src="test.js" crossorigin=""></script>
+
+
+</body></html>
