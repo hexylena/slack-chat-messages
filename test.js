@@ -584,18 +584,5 @@ $(document).ready(function() {
 		$el = $(this);
 		return $el.toggleClass("active");
 	});
-	$(".js-skip").on("click", function(e) {
-		var $el, animate;
-		e.preventDefault();
-		$el = $(this);
-		animate = false;
-		map.stop();
-		$(".js-animate").removeClass("animating");
-		if ($el.attr("data-animate")) {
-			animate = true;
-		}
-		map.redrawAll(parseInt($(this).attr("data-skip")), animate);
-		return updateDateTime(map.currDate);
-	});
 	map.animate(20);
 });
