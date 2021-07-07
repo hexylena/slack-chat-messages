@@ -1,5 +1,15 @@
 var DaylightMap, updateDateTime;
 
+var eu = ["EL", "ES", "FR", "HR", "IT",
+"CY", "LV", "BE", "BG", "CZ", "DK", "DE",
+"EE", "IE", "LT", "LU", "HU", "MT", "NL",
+"AT", "PL", "PT", "RO", "SI", "SK", "FI",
+"SE"];
+
+function randomChoice(arr) {
+	return arr[Math.floor(Math.random() * arr.length)];
+}
+
 DaylightMap = function() {
 	class DaylightMap {
 		constructor(svg, date, options = {}) {
@@ -346,8 +356,16 @@ DaylightMap = function() {
 
 						var tmp = msg.map(x => {
 							var ts = x[0],
-								cc = x[1],
-								z = this.weighted_random(cityMap[cc]);
+								cc = x[1];
+
+								if (cc == "NL"){
+									cc = randomChoice(eu);
+									if(cityMap[cc] === undefined){
+										cc = "NL";
+									}
+									console.log("NL", cc);
+								}
+								var z = this.weighted_random(cityMap[cc]);
 								return [ts, z, cc]
 						}).forEach((val, i) => {
 							var coords = [parseFloat(val[1][0]), parseFloat(val[1][1])],
